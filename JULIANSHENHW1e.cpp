@@ -394,6 +394,7 @@ string convertRomanToDecimal(string s)
                 num += x;
                 placeholder = x;
                 answer = to_string(num);
+
             }
             else
             {
@@ -415,6 +416,7 @@ string convertRomanToDecimal(string s)
             }
         }
     }
+
     return answer;
 }
 

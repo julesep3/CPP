@@ -4,6 +4,66 @@
 
 using namespace std;
 
+int stringToInt(string s)
+{
+    bool tenths = true;
+    bool hundredths = false;
+    bool thousandths = false;
+    int num = 0;
+    string z = "0123456789";
+    if (tenths)
+    {
+        for (int i = 0; i < z.length(); i++)
+        {
+            string elem = z.substr(i, 1);
+            if (s.substr(s.length() - 1) == elem)
+            {
+                num += i;
+                tenths = false;
+                hundredths = true;
+                break;
+            }
+        }
+    }
+    if (hundredths)
+    {
+        for (int i = 0; i < z.length(); i++)
+        {
+            string elem = z.substr(i, 1);
+            if (s.substr(s.length() - 2) == elem)
+            {
+                int hunMultiplier = i*10;
+                num += hunMultiplier;
+                hundredths = false;
+                thousandths = true;
+                break;
+            }
+        }
+    }
+    if (thousandths)
+    {
+        for (int i = 0; i < z.length(); i++)
+        {
+            string elem = z.substr(i, 1);
+            if (s.substr(s.length() - 2) == elem)
+            {
+                int thMultiplier = i*100;
+                num += thMultiplier;
+                thousandths = false;
+                break;
+            }
+        }
+    }
+    return num;
+}
+
+int main()
+{
+    string x = "295";
+    cout << stringToInt(x) << endl;
+}
+
+/*
 bool sameDataType(string s)
 {
     for (int i = 1; i < s.length(); i++)
@@ -48,4 +108,4 @@ int main()
 
     return 0;
 }
-
+*/

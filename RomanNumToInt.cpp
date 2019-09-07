@@ -122,12 +122,12 @@ int romNumToInt(string s)
 
 int main()
 {
-    string a = "DCIX";   // 609
-    string b = "MDIV";   // 1504
-    string c = "MCVXIM"; // invalid
-    string d = "VIV";    // 7
-    string e = "MCVLX";  //
-    string f = "IIV";    // invalid
+    string a = "CCXXII";   // 222
+    string b = "MMMDXLII";   // 3542
+    string c = "XII"; // 12
+    string d = "DLXXVIII";    // 578
+    string e = "MMDCCXCIV";  // 2794
+    string f = "MCCXXXIV";    // 1234
 
     cout << romNumToInt(a) << " || " << romNumToInt(b) << " || " << romNumToInt(c) << endl;
     cout << romNumToInt(d) << " || " << romNumToInt(e) << " || " << romNumToInt(f) << endl;
